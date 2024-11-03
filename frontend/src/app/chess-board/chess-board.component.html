@@ -1,0 +1,15 @@
+<div class="chess-board">
+  <div *ngFor="let row of board; let i = index" class="row">
+    <div
+      *ngFor="let cell of row; let j = index"
+      class="cell"
+      [ngClass]="{
+        'dark': (i + j) % 2 !== 0,
+        'light': (i + j) % 2 === 0,
+        'selected': cell === selectedFrom || cell === selectedTo
+      }"
+      (click)="selectCell(cell)">
+      {{ cell }}
+    </div>
+  </div>
+</div>

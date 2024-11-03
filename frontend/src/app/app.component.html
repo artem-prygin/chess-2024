@@ -1,0 +1,7 @@
+<div>
+  <h1>Chess Game</h1>
+  <app-chess-board (move)="handleMove($event)"></app-chess-board>
+  <ul>
+    <li *ngFor="let move of moves">{{ move.from }} -> {{ move.to }}</li>
+  </ul>
+</div>
