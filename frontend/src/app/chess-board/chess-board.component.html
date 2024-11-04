@@ -1,15 +1,10 @@
 <div class="chess-board">
-  <div *ngFor="let row of board; let i = index" class="row">
-    <div
-      *ngFor="let cell of row; let j = index"
-      class="cell"
-      [ngClass]="{
-        'dark': (i + j) % 2 !== 0,
-        'light': (i + j) % 2 === 0,
-        'selected': cell === selectedFrom || cell === selectedTo
-      }"
-      (click)="selectCell(cell)">
-      {{ cell }}
-    </div>
+  <div
+    *ngFor="let cell of cells; let i = index"
+    class="cell"
+    [class.dark]="(i + Math.floor(i / 8)) % 2 !== 0"
+    (click)="selectCell(cell)"
+  >
+    <span class="piece">{{ getPieceSymbol(board[cell]) }}</span>
   </div>
 </div>
