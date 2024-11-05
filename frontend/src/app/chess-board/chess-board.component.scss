@@ -1,28 +1,8 @@
-.chess-board {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  width: 400px;
-  height: 400px;
-  border: 2px solid #333;
-}
+@import "../../styles";
 
 .cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  border: 1px solid #333;
-
-  &.dark {
-    background-color: #b58863;
-  }
-
-  &:not(.dark) {
-    background-color: #f0d9b5;
-  }
-}
-
-.piece {
-  font-size: 32px;
+  padding: 5px;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
 }

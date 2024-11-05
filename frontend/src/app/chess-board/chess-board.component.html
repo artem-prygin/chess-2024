@@ -1,10 +1,9 @@
-<div class="chess-board">
-  <div
-    *ngFor="let cell of cells; let i = index"
-    class="cell"
-    [class.dark]="(i + Math.floor(i / 8)) % 2 !== 0"
-    (click)="selectCell(cell)"
-  >
-    <span class="piece">{{ getPieceSymbol(board[cell]) }}</span>
+<div class="board">
+  <div class="d-flex" *ngFor="let i of [].constructor(8); index as rowIndex">
+    <div class="d-flex" *ngFor="let j of [].constructor(8); index as columnIndex">
+      <div class="cell">
+        {{ rowIndex }} - {{ columnIndex }}
+      </div>
+    </div>
   </div>
 </div>
